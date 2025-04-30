@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Table } from "../../organisms/Table";
 import { PageHeader } from "../../molecules/PageHeader";
 import { Button } from "../../atoms/Button";
+import { SideMenu } from "../../molecules/SideMenu";
 
 interface User {
   id: number;
@@ -29,18 +31,39 @@ const columns = [
   { key: "role" as keyof User, header: "権限", width: "2/12" },
 ];
 
+const menuItems = [
+  { label: "ホーム", path: "/" },
+  { label: "プロフィール", path: "/profile" },
+  { label: "設定", path: "/settings" },
+];
+
 export const TableSample = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
   return (
-    <div className="p-4">
-      <PageHeader
-        title="ユーザー一覧"
-        actions={
-          <Button variant="primary" onClick={open}>
-            新規作成
-          </Button>
-        }
+    <div className="flex min-h-screen">
+      <SideMenu
+        items={menuItems}
+        isOpen={isMenuOpen}
+        onToggle={() => setIsMenuOpen(!isMenuOpen)}
       />
-      <Table data={sampleData} columns={columns} pageSize={3} />
+      <div className={`flex-1 transition-all duration-300 ${isMenuOpen ? "ml-64" : "ml-16"}`}>
+        <div className="fixed top-0 right-0 left-0 z-10 bg-white shadow-sm">
+          <PageHeader
+            title="ユーザー一覧"
+            isMenuOpen={isMenuOpen}
+            onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
+            actions={
+              <Button variant="primary" onClick={() => {}}>
+                新規作成
+              </Button>
+            }
+          />
+        </div>
+        <main className="mt-20 p-8">
+          <Table data={sampleData} columns={columns} pageSize={3} />
+        </main>
+      </div>
     </div>
   );
 };

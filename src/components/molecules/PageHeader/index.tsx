@@ -8,9 +8,14 @@ interface PageHeaderProps {
   isMenuOpen?: boolean;
 }
 
-export const PageHeader = ({ title, actions, onMenuToggle, isMenuOpen }: PageHeaderProps) => {
+export const PageHeader = ({
+  title,
+  actions,
+  onMenuToggle,
+  isMenuOpen,
+}: PageHeaderProps) => {
   return (
-    <div className="flex items-center justify-between mb-6">
+    <div className="flex w-full items-center justify-between mb-6">
       <div className="flex items-center space-x-4">
         <button
           onClick={onMenuToggle}
@@ -24,4 +29,3 @@ export const PageHeader = ({ title, actions, onMenuToggle, isMenuOpen }: PageHea
     </div>
   );
 };
-
