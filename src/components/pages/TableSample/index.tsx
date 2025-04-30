@@ -34,7 +34,11 @@ export const TableSample = () => {
     <div className="p-4">
       <PageHeader
         title="ユーザー一覧"
-        actions={<Button variant="primary">新規作成</Button>}
+        actions={
+          <Button variant="primary" onClick={open}>
+            新規作成
+          </Button>
+        }
       />
       <Table data={sampleData} columns={columns} pageSize={3} />
     </div>

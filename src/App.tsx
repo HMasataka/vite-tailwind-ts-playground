@@ -1,11 +1,15 @@
-import { DefaultLayout } from "./components/templates/DefaultLayout";
-import { TableSample } from "./components/pages/TableSample";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "./components/pages/Home";
 
 function App() {
   return (
-    <DefaultLayout>
-      <TableSample />
-    </DefaultLayout>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<div>プロフィールページ</div>} />
+        <Route path="/settings" element={<div>設定ページ</div>} />
+      </Routes>
+    </Router>
   );
 }
 
