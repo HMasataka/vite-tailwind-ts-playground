@@ -2,6 +2,7 @@ import { useTable } from "../../../hooks/useTable";
 import { TableHeader } from "../../molecules/TableHeader";
 import { TableBody } from "../../molecules/TableBody";
 import { Pagination } from "../../molecules/Pagination";
+import { TableBase } from "../../atoms/TableBase";
 
 interface TableProps<T> {
   data: T[];
@@ -31,11 +32,11 @@ export const Table = <T extends object>({
   });
 
   return (
-    <div className="w-full overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
+    <div className="w-full h-full overflow-x-auto">
+      <TableBase>
         <TableHeader columns={tableColumns} />
         <TableBody data={currentData} columns={tableColumns} />
-      </table>
+      </TableBase>
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
