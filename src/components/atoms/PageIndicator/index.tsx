@@ -9,4 +9,4 @@ export const PageIndicator = ({ currentPage, totalPages }: PageIndicatorProps) =
       ページ {currentPage} / {totalPages}
     </div>
   );
-}; 
+};

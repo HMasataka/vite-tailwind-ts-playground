@@ -1,5 +1,4 @@
 import { PaginationButton } from "../../atoms/PaginationButton";
-import { Text } from "../../atoms/Text";
 import { PageIndicator } from "../../atoms/PageIndicator";
 
 interface PaginationProps {
