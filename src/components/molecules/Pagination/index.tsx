@@ -1,5 +1,6 @@
 import { PaginationButton } from "../../atoms/PaginationButton";
 import { Text } from "../../atoms/Text";
+import { PageIndicator } from "../../atoms/PageIndicator";
 
 interface PaginationProps {
   currentPage: number;
@@ -20,9 +21,7 @@ export const Pagination = ({
       >
         前へ
       </PaginationButton>
-      <Text variant="body" className="h-full flex items-center">
-        ページ {currentPage} / {totalPages}
-      </Text>
+      <PageIndicator currentPage={currentPage} totalPages={totalPages} />
       <PaginationButton
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
