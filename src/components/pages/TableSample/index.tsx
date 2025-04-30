@@ -1,4 +1,6 @@
 import { Table } from "../../organisms/Table";
+import { PageHeader } from "../../molecules/PageHeader";
+import { Button } from "../../atoms/Button";
 
 interface User {
   id: number;
@@ -30,9 +32,11 @@ const columns = [
 export const TableSample = () => {
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">ユーザー一覧</h1>
+      <PageHeader
+        title="ユーザー一覧"
+        actions={<Button variant="primary">新規作成</Button>}
+      />
       <Table data={sampleData} columns={columns} pageSize={3} />
     </div>
   );
 };
-
