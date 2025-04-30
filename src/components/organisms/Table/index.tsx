@@ -1,7 +1,7 @@
 import { useTable } from "../../../hooks/useTable";
-import { TableHeader } from '../../molecules/TableHeader';
-import { TableBody } from '../../molecules/TableBody';
-import { Pagination } from '../../molecules/Pagination';
+import { TableHeader } from "../../molecules/TableHeader";
+import { TableBody } from "../../molecules/TableBody";
+import { Pagination } from "../../molecules/Pagination";
 
 interface TableProps<T> {
   data: T[];
@@ -44,4 +44,3 @@ export const Table = <T extends object>({
     </div>
   );
 };
-
