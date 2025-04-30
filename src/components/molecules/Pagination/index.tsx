@@ -1,4 +1,5 @@
 import { PaginationButton } from "../../atoms/PaginationButton";
+import { Text } from "../../atoms/Text";
 
 interface PaginationProps {
   currentPage: number;
@@ -12,16 +13,16 @@ export const Pagination = ({
   onPageChange,
 }: PaginationProps) => {
   return (
-    <div className="flex justify-between items-center mt-4">
+    <div className="flex justify-between items-center mt-4 h-10">
       <PaginationButton
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
         前へ
       </PaginationButton>
-      <span>
+      <Text variant="body" className="h-full flex items-center">
         ページ {currentPage} / {totalPages}
-      </span>
+      </Text>
       <PaginationButton
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
