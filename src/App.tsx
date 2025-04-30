@@ -1,10 +1,10 @@
-import { DefaultLayout } from './components/templates/DefaultLayout';
-import { Home } from './components/pages/Home';
+import { DefaultLayout } from "./components/templates/DefaultLayout";
+import { TableSample } from "./components/pages/TableSample";
 
 function App() {
   return (
     <DefaultLayout>
-      <Home />
+      <TableSample />
     </DefaultLayout>
   );
 }
