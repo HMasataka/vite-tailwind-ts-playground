@@ -47,23 +47,19 @@ export const TableSample = () => {
         isOpen={isMenuOpen}
         onToggle={() => setIsMenuOpen(!isMenuOpen)}
       />
-      <div className={`flex-1 transition-all duration-300 ${isMenuOpen ? "ml-64" : "ml-16"}`}>
-        <div className="fixed top-0 right-0 left-0 z-10 bg-white shadow-sm">
-          <PageHeader
-            title="ユーザー一覧"
-            isMenuOpen={isMenuOpen}
-            onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
-            actions={
-              <Button variant="primary" onClick={() => {}}>
-                新規作成
-              </Button>
-            }
-          />
-        </div>
-        <main className="mt-20 p-8">
-          <Table data={sampleData} columns={columns} pageSize={3} />
-        </main>
-      </div>
+      <PageHeader
+        title="ユーザー一覧"
+        isMenuOpen={isMenuOpen}
+        onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
+        actions={
+          <Button variant="primary" onClick={() => {}}>
+            新規作成
+          </Button>
+        }
+      />
+      <main className="w-screen h-screen overflow-x-auto">
+        <Table data={sampleData} columns={columns} pageSize={3} />
+      </main>
     </div>
   );
 };
