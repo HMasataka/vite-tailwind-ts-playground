@@ -15,7 +15,7 @@ export const PageHeader = ({
   isMenuOpen,
 }: PageHeaderProps) => {
   return (
-    <div className="flex w-full items-center justify-between fixed top-0 right-0 left-0 z-10 bg-white shadow-sm">
+    <div className="flex w-full h-20 items-center justify-between fixed top-0 right-0 left-0 z-10 bg-white shadow-sm">
       <div className="flex items-center space-x-4">
         <button
           onClick={onMenuToggle}

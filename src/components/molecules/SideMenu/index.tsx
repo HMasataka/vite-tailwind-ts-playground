@@ -15,7 +15,7 @@ interface SideMenuProps {
 export const SideMenu = ({ items, isOpen = true }: SideMenuProps) => {
   return (
     <div
-      className={`fixed left-0 top-0 h-full bg-white shadow-lg transition-all duration-300 ${
+      className={`fixed left-0 top-20 h-full bg-white shadow-lg transition-all duration-300 ${
         isOpen ? "w-64" : "w-0"
       }`}
     >
